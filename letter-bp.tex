@@ -1,0 +1,70 @@
+\documentclass[%
+  fontsize=11pt, % Schriftgröße
+  version=last%  % Neueste Version von KOMA-Skript verwenden
+]{scrlttr2}
+
+% ===== Deutsche Sprache =====
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+% ============================
+
+\LoadLetterOption{DIN} % Einstellungen für DIN 676 laden
+\LoadLetterOption{absender} % Absenderdaten und -einstellungen aus absender.lco laden
+
+\usepackage{graphicx} % Um Grafiken (bspw. ein Logo) einbinden zu können
+\usepackage{qrcode} % Um QR Codes einbinden zu können
+\usepackage{lastpage} % Um die maximale Seitenzahl anzuzeigen
+\usepackage{blindtext} % Um Dummy Text zu erzeugen
+\usepackage{hyperref} % Für Links und Dokumentinformationen im PDF
+% \usepackage{mathptmx} % Times Font
+
+% ====== Geschäftszeichenzeile =========
+\setkomavar{yourref}{ABC-123/D}          % Ihr Zeichen
+\setkomavar{yourmail}{11.11.2017}         % Ihr Schreiben vom
+\setkomavar{myref}{}            % Unser Zeichen
+\setkomavar{customer}{12345}         % Kundennummer
+\setkomavar{invoice}{67890}          % Rechnungsnummer
+\setkomavar{place}{ABCD} % Ort
+\setkomavar{date}{\today}       % Datum
+% =====================================
+
+%\setkomavar{title}{Titel}
+\setkomavar{keywords}{}
+
+\setkomavar{subject}{Betreff}
+
+% ==PDF Informationen==
+\usekomavar[\def\author]{fromname}
+\ifkomavarempty{subject}{\def\subject{}}{\usekomavar[\def\subject]{subject}}
+\ifkomavarempty{keywords}{\def\keywords{}}{\usekomavar[\def\keywords]{keywords}}
+
+\hypersetup{
+	colorlinks=false,
+	pdftitle={\subject},
+	pdfauthor={\author},
+	pdfsubject={\subject},
+	pdfkeywords={\keywords},
+	pdfproducer={LaTeX}
+}
+
+\pagestyle{myheadings}
+
+\begin{document}
+\begin{letter}{%
+		
+% ===== Zielanschrift =====
+  Erika Musterfrau\\
+  Musterweg 43\\
+  56789 Musterhausen%
+% =======================
+}
+
+\opening{Sehr geehrte Frau Musterfrau,}
+
+hier kommt im Brief der eigentliche Text hin.
+
+
+\closing{Mit freundlichen Grüßen}
+
+\end{letter}
+\end{document}
