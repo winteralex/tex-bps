@@ -1,0 +1,21 @@
+\ProvidesFile{absender.lco}
+
+\@setplength{firstfootvpos}{275mm}
+\setkomafont{pageheadfoot}{}
+
+\KOMAoptions{
+% fromlogo=false,        % Logo wird im Briefkopf angezeigt
+% subject=titled,       % Druckt "Betrifft: " vor dem Betreff
+locfield=wide,          % Breite Absenderergänzung (location)
+fromalign=left,         % Ausrichtung des Briefkopfes
+fromrule=afteraddress,  % Trennlinie unter dem Briefkopf
+refline=narrow
+}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[ngerman]{babel}
+
+\setkomavar{fromname}{} % Name
+\setkomavar{fromaddress}{% % Adresse
+}
+%other vars
