@@ -1,0 +1,37 @@
+\ProvidesFile{absender.lco}
+
+\@setplength{firstfootvpos}{275mm}
+\setkomafont{pageheadfoot}{}
+
+\KOMAoptions{
+% fromlogo=false,        % Logo wird im Briefkopf angezeigt
+% subject=titled,       % Druckt "Betrifft: " vor dem Betreff
+locfield=wide,          % Breite Absenderergänzung (location)
+fromalign=left,         % Ausrichtung des Briefkopfes
+fromrule=afteraddress,  % Trennlinie unter dem Briefkopf
+refline=narrow
+}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[ngerman]{babel}
+
+\setkomavar{fromname}{} % Name
+\setkomavar{fromaddress}{% % Adresse
+}
+%other vars
+\setkomavar{fromfax}{ } % Faxnummer
+\setkomavar{fromemail}{\href{mailto: }{ }} % Email-Adresse
+\setkomavar{fromphone}{ } % Telefonnummer
+\setkomavar{fromurl}[Website:~]{ } % Website
+% ===== Absenderergänzung =====
+\setkomavar{location}{%
+  \raggedright\footnotesize{%
+  \usekomavar{fromname}\\
+  \usekomavar{fromaddress}\\
+  \usekomavar*{fromphone}\usekomavar{fromphone}\\
+  %\usekomavar*{fromfax}\usekomavar{fromfax}\\
+  \usekomavar*{fromemail}\usekomavar{fromemail}
+  %\usekomavar*{fromurl}\usekomavar{fromurl}
+  }%
+}
+% ============================
