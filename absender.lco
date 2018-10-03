@@ -19,3 +19,19 @@ refline=narrow
 \setkomavar{fromaddress}{% % Adresse
 }
 %other vars
+\setkomavar{fromfax}{ } % Faxnummer
+\setkomavar{fromemail}{\href{mailto: }{ }} % Email-Adresse
+\setkomavar{fromphone}{ } % Telefonnummer
+\setkomavar{fromurl}[Website:~]{ } % Website
+% ===== Absenderergänzung =====
+\setkomavar{location}{%
+  \raggedright\footnotesize{%
+  \usekomavar{fromname}\\
+  \usekomavar{fromaddress}\\
+  \usekomavar*{fromphone}\usekomavar{fromphone}\\
+  %\usekomavar*{fromfax}\usekomavar{fromfax}\\
+  \usekomavar*{fromemail}\usekomavar{fromemail}
+  %\usekomavar*{fromurl}\usekomavar{fromurl}
+  }%
+}
+% ============================
