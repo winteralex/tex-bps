@@ -35,3 +35,12 @@ refline=narrow
   }%
 }
 % ============================
+
+% ===== Signatur =====
+\setkomavar{signature}{%
+  \includegraphics[width=3cm]{sign.png}\\
+  \usekomavar{fromname}\\
+  %{\scriptsize{Geschäftsführer}}%                   % für Titel unter dem Name
+}
+\renewcommand*{\raggedsignature}{\raggedright}
+% ====================
