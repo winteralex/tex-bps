@@ -65,6 +65,27 @@ hier kommt im Brief der eigentliche Text hin.
 
 
 \closing{Mit freundlichen Grüßen}
+% ===== Postskriptum =====
+\ps{%
+	PS:
+	\dots%
+}
+% ========================
 
+% ===== Anlage(n) =====
+%\setkomavar*{enclseparator}{Anlage}        <- Uncomment für Singular
+\encl{%
+  Anlage 1\\
+  Anlage 2%
+}
+% ===================
+
+% ===== Verteiler =====
+\setkomavar*{ccseparator}{Kopie an}
+\cc{%
+  Verteiler 1\\
+  Verteiler 2%
+}
+% =====================
 \end{letter}
 \end{document}
