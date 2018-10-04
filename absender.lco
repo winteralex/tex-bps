@@ -35,7 +35,7 @@ refline=narrow
   }%
 }
 % ============================
-
+ 
 % ===== Signatur =====
 \setkomavar{signature}{%
   \includegraphics[width=3cm]{sign.png}\\
@@ -44,3 +44,37 @@ refline=narrow
 }
 \renewcommand*{\raggedsignature}{\raggedright}
 % ====================
+=======
+
+
+
+
+% ===== Fußzeile =====
+\setkomavar{firstfoot}{\scriptsize%
+\rule[5pt]{\textwidth}{.4pt} \\
+\setlength{\tabcolsep}{1mm}
+\begin{tabular}{ll}
+\qrcode[hyperlink,height=1.5cm]{ } & \begin{tabular}[c]{@{}l@{}}PGP-Key\\ 0x16c83147d65a5f0e\end{tabular}
+\end{tabular}
+\hfill
+\begin{tabular}{c}
+~\\ \pagemark/\pageref*{LastPage}
+\end{tabular}
+\hfill
+\begin{tabular}{l}
+\begin{tabular}[c]{@{}l@{}}IBAN:~\usekomavar{IBAN}\\ BIC:~\usekomavar{BIC}\end{tabular}
+\end{tabular}
+}% 
+
+\setkomavar{nextfoot}{\scriptsize%
+\setlength{\tabcolsep}{1mm}
+\begin{tabular}{ll}
+~ & \begin{tabular}[c]{@{}l@{}}~\\ ~\end{tabular}
+\end{tabular}
+\hfill
+\begin{tabular}{c}
+~\\ \pagemark/\pageref*{LastPage}
+\end{tabular}
+\hfill
+}% 
+ 
