@@ -1,7 +1,7 @@
 \ProvidesFile{absender.lco}
 
 \@setplength{firstfootvpos}{275mm}
-\setkomafont{pageheadfoot}{}
+\setkomafont{pageheadfoot}{} 
 
 \KOMAoptions{
 % fromlogo=false,        % Logo wird im Briefkopf angezeigt
