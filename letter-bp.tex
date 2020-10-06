@@ -1,10 +1,13 @@
 \documentclass[%
-  fontsize=11pt, % Schriftgröße
-  version=last%  % Neueste Version von KOMA-Skript verwenden
+fontsize=11pt, % Schriftgröße
+version=last%  % Neueste Version von KOMA-Skript verwenden
 ]{scrlttr2}
 
+\usepackage{fontspec}
+\setmainfont{Inter Regular}
+
 % ===== Deutsche Sprache =====
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 % ============================
 
@@ -15,21 +18,21 @@
 \usepackage{qrcode} % Um QR Codes einbinden zu können
 \usepackage{lastpage} % Um die maximale Seitenzahl anzuzeigen
 \usepackage{blindtext} % Um Dummy Text zu erzeugen
-\usepackage[hidelinks{hyperref} % Für Links und Dokumentinformationen im PDF
+\usepackage{hyperref} % Für Links und Dokumentinformationen im PDF
 % \usepackage{mathptmx} % Times Font
 
 % ====== Geschäftszeichenzeile =========
 \setkomavar{yourref}{ABC-123/D}          % Ihr Zeichen
 \setkomavar{yourmail}{11.11.2017}         % Ihr Schreiben vom
-%\setkomavar{myref}{}            % Unser Zeichen
+\setkomavar{myref}{}            % Unser Zeichen
 \setkomavar{customer}{12345}         % Kundennummer
 \setkomavar{invoice}{67890}          % Rechnungsnummer
-\setkomavar{place}{ABCD} % Ort
+\setkomavar{place}{Hausen} % Ort
 \setkomavar{date}{\today}       % Datum
 % =====================================
 
 %\setkomavar{title}{Titel}
-\setkomavar{keywords}{}
+\setkomavar{keywords}{Test, Brief}
 
 \setkomavar{subject}{Betreff}
 
@@ -52,40 +55,42 @@
 \begin{document}
 \begin{letter}{%
 		
-% ===== Zielanschrift =====
-  Erika Musterfrau\\
-  Musterweg 43\\
-  56789 Musterhausen%
-% =======================
-}
-
-\opening{Sehr geehrte Frau Musterfrau,}
-
-hier kommt im Brief der eigentliche Text hin.
-
-
-\closing{Mit freundlichen Grüßen}
-% ===== Postskriptum =====
-\ps{%
-	PS:
-	\dots%
-}
-% ========================
-
-% ===== Anlage(n) =====
-\setkomavar*{enclseparator}{Anlagen}
-\encl{%
-  Anlage 1\\
-  Anlage 2%
-}
-% ===================
-
-% ===== Verteiler =====
-\setkomavar*{ccseparator}{Kopie an}
-\cc{%
-  Verteiler 1\\
-  Verteiler 2%
-}
-% =====================
+		% ===== Zielanschrift =====
+		Erika Musterfrau\\
+		Musterweg 43\\
+		56789 Musterhausen%
+		% =======================
+	}
+	
+	\opening{Sehr geehrte Frau Musterfrau,}
+	
+	hier kommt im Brief der eigentliche Text hin.
+	
+	
+	\closing{Mit freundlichen Grüßen}
+	
+	% ===== Postskriptum =====
+	\ps{%
+		PS:
+		\dots%
+	}
+	% ========================
+	
+	% ===== Anlage(n) =====
+	%\setkomavar*{enclseparator}{Anlage}        <- Uncomment für Singular
+	\encl{%
+		Anlage 1\\
+		Anlage 2%
+	}
+	% ===================
+	
+	% ===== Verteiler =====
+	\setkomavar*{ccseparator}{Kopie an}
+	\cc{%
+		Verteiler 1\\
+		Verteiler 2%
+	}
+	% =====================
+	
 \end{letter}
 \end{document}
