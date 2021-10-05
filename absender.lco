@@ -1,7 +1,7 @@
 \ProvidesFile{absender.lco}
 
 \@setplength{firstfootvpos}{275mm}
-\setkomafont{pageheadfoot}{} 
+\setkomafont{pageheadfoot}{}
 
 \KOMAoptions{
 % fromlogo=false,        % Logo wird im Briefkopf angezeigt
@@ -15,46 +15,57 @@ refline=narrow
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[ngerman]{babel}
 
-\setkomavar{fromname}{} % Name
+\setkomavar{fromname}{Max Muster} % Name
 \setkomavar{fromaddress}{% % Adresse
+Musterweg 42\\
+12345 Hausen%
 }
-%other vars
-\setkomavar{fromfax}{ } % Faxnummer
-\setkomavar{fromemail}{\href{mailto: }{ }} % Email-Adresse
-\setkomavar{fromphone}{ } % Telefonnummer
-\setkomavar{fromurl}[Website:~]{ } % Website
+\setkomavar{fromfax}{01234~56789} % Faxnummer
+\setkomavar{fromemail}{\href{mailto:mail@muster.mann}{mail@muster.mann}} % Email-Adresse
+\setkomavar{fromphone}{09876~543210} % Telefonnummer
+\setkomavar{fromurl}[Website:~]{www.muster.mann} % Website
+
 % ===== Absenderergänzung =====
 \setkomavar{location}{%
-  \raggedright\footnotesize{%
-  \usekomavar{fromname}\\
-  \usekomavar{fromaddress}\\
-  \usekomavar*{fromphone}\usekomavar{fromphone}\\
-  %\usekomavar*{fromfax}\usekomavar{fromfax}\\
-  \usekomavar*{fromemail}\usekomavar{fromemail}
-  %\usekomavar*{fromurl}\usekomavar{fromurl}
-  }%
+\raggedright\footnotesize{%
+\usekomavar{fromname}\\
+\usekomavar{fromaddress}\\
+\usekomavar*{fromphone}\usekomavar{fromphone}\\
+%\usekomavar*{fromfax}\usekomavar{fromfax}\\
+\usekomavar*{fromemail}\usekomavar{fromemail}
+%\usekomavar*{fromurl}\usekomavar{fromurl}
+}%
 }
 % ============================
- 
+
+% Logo
+% \setkomavar{fromlogo}{\includegraphics{logo.png}}
+
+% Sonstige Variablen
+\newkomavar{keywords}
+
+% == Bankverbindung ==
+\newkomavar{IBAN}
+\newkomavar{BIC}
+\setkomavar{IBAN}{XX\,00\,0000\,0000\,0000\,0000\,00}
+\setkomavar{BIC}{BANKDEYYXXX}
+% ====================
+
 % ===== Signatur =====
 \setkomavar{signature}{%
-  \includegraphics[width=3cm]{sign.png}\\
-  \usekomavar{fromname}\\
-  %{\scriptsize{Geschäftsführer}}%                   % für Titel unter dem Name
+%\includegraphics[width=3cm]{sign.png}\\
+\usekomavar{fromname}\\
+%{\scriptsize{Geschäftsführer}}%                   % für Titel unter dem Name
 }
 \renewcommand*{\raggedsignature}{\raggedright}
 % ====================
-=======
-
-
-
 
 % ===== Fußzeile =====
 \setkomavar{firstfoot}{\scriptsize%
 \rule[5pt]{\textwidth}{.4pt} \\
 \setlength{\tabcolsep}{1mm}
 \begin{tabular}{ll}
-\qrcode[hyperlink,height=1.5cm]{ } & \begin{tabular}[c]{@{}l@{}}PGP-Key\\ 0x16c83147d65a5f0e\end{tabular}
+\qrcode[hyperlink,height=1.5cm]{https://pgp.mit.edu/pks/lookup?op=get\&search=0x000} & \begin{tabular}[c]{@{}l@{}}PGP-Key\\ 0x000\end{tabular}
 \end{tabular}
 \hfill
 \begin{tabular}{c}
@@ -77,4 +88,3 @@ refline=narrow
 \end{tabular}
 \hfill
 }% 
- 
